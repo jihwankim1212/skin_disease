@@ -1,0 +1,23 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+<div><label style="width: 100px; display: inline-block;">Food camrea test </label></div>
+<form method="POST" id="upload-form" enctype="multipart/form-data">
+    <input type="file" name="image" id="image-upload">
+</form>
+
+<div id="input-and-submit-container" style="display: flex; justify-content: flex-start; align-items: center;">
+    <input type="button" value="Submit" id="submit-btn_" style="display: flex;">
+</div>
+<div id="images-container" style="display: none;">
+    <img id="uploaded-image" src="">
+    <img id="saved-image" src="">
+</div>
+<div id="json-display"></div>
+
+<script src="{{ url_for('static', filename='food_camera_process.js') }}"></script>
+</body>
+</html>

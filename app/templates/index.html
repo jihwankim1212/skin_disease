@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div><label style="width: 100px; display: inline-block;">정면 사진 </label></div>
+<form method="POST" id="upload-form" enctype="multipart/form-data">
+    <input type="file" name="image" id="image-upload">
+</form>
+
+<div id="input-and-submit-container" style="display: flex; justify-content: flex-start; align-items: center;">
+    <div id="input-container" style="display: none;">
+        <input type="number" id="before-input" placeholder="Before">
+        <input type="number" id="after-input" placeholder="After">
+    </div>
+    <input type="button" value="Submit" id="submit-btn" style="display: none;">
+</div>
+<div id="images-container" style="display: none;">
+    <img id="uploaded-image" src="">
+    <img id="saved-image" src="">
+</div>
+<div>
+
+    <button id="toggle-btn">▶ Show Sliders</button>
+</div>
+<div id="sliders-container" style="display: none;">
+    <div><label style="width: 100px; display: inline-block;">Jaw: </label><input type="range" min="-100" max="100" value="0" step="1" class="slider" data-label="jaw"><span id="jaw-value">0</span></div>
+    <div><label style="width: 100px; display: inline-block;">Eye: </label><input type="range"  min="-100" max="100" value="0" step="1" class="slider" data-label="eye"><span id="eye-value">0</span></div>
+    <div><label style="width: 100px; display: inline-block;">Nose: </label><input type="range" min="-100" max="100" value="0" step="1" class="slider" data-label="nose"><span id="nose-value">0</span></div>
+    <div><label style="width: 100px; display: inline-block;">Skin: </label><input type="range" min="-100" max="100" value="0" step="1" class="slider" data-label="skin"><span id="skin-value">0</span></div>
+    <div><label style="width: 100px; display: inline-block;">Brightness: </label><input type="range" min="0" max="100" value="0" step="1" class="slider" data-label="brightness"><span id="brightness-value">0</span></div>
+</div>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
